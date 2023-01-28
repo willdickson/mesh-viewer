@@ -1,4 +1,6 @@
 # mesh-viewer 
 
-Primative, in browser, 3D mesh viewer.  (In development)
+Primitive 3D mesh viewer for the browser  (In development/experimental)
+
+
 

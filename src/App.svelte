@@ -12,11 +12,12 @@
   } from "carbon-components-svelte";
   import ModelViewer from './lib/ModelViewer.svelte'
   import ModelLoader from './lib/ModelLoader.svelte'
+  import ThemeSelect from './lib/ThemeSelect.svelte'
   let theme = "g80";
   $: document.documentElement.setAttribute("theme", theme);
 </script>
 
-
+<Theme bind:theme />
 <Header platformName="3D Mesh Viewer" />
 <Content>
   <Grid fullWidth>
@@ -25,14 +26,8 @@
       <ModelViewer/>
     </Column>
     <Column ls={{span: 3, offset: 0}} padding>
-      <Theme bind:theme />
-      <RadioButtonGroup legendText="Carbon theme" bind:selected={theme}>
-        {#each ["white", "g10", "g80", "g100"] as value}
-          <RadioButton labelText={value} {value} />
-        {/each}
-      </RadioButtonGroup>
-      <br/>
-      <br/>
+      <ThemeSelect bind:theme/>
+      <br/> <br/>
       <ModelLoader/>
     </Column>
   </Row>
