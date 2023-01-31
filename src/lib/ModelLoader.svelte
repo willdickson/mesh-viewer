@@ -5,6 +5,7 @@
   import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'
   import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
   import { meshGeoms, numMeshTotal, numMeshLoaded, colorMap } from './stores.js'
+  import MeshFileUploader from './MeshFileUploader.svelte'
 
   let meshFileUploader;
   let colorMapFileUploader;
@@ -49,7 +50,6 @@
       fileReader.addEventListener("load", (e) => {
         try {
           $colorMap = JSON.parse(fileReader.result);
-          console.log($colorMap);
         }
         catch(error) {
           console.log('JSON parse error', error);
@@ -71,13 +71,13 @@
   <Accordion>
     <AccordionItem title="Mesh Files">
       <br/> 
-      <FileUploader
+      <MeshFileUploader
         bind:this={meshFileUploader}
         multiple
         bind:files={meshFiles}
-        labelTitle=".stl or .obj"
+        labelTitle=".stl"
         buttonLabel="Load"
-        accept={[".stl", ".obj"]}
+        accept={[".stl"]}
         status="complete"
         on:add={onMeshFilesAdded}
         on:remove={onMeshFilesRemoved}

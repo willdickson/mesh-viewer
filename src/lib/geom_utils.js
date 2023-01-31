@@ -53,7 +53,7 @@ export function getCameraPosition(meshGeoms) {
 }
 
 export function getMeshColor(name, colorMap) {
-  let meshColor = '#505050';
+  let meshColor = '#808080';
   if (colorMap[name]) {
     meshColor = colorMap[name];
   }

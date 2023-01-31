@@ -22,13 +22,13 @@
 <Content>
   <Grid fullWidth>
   <Row padding>
-    <Column lg={{span: 13, offset: 0}} padding>
-      <ModelViewer/>
-    </Column>
-    <Column ls={{span: 3, offset: 0}} padding>
+    <Column ls={{span: 4, offset: 0}} padding>
       <ThemeSelect bind:theme/>
       <br/> <br/>
       <ModelLoader/>
+    </Column>
+    <Column lg={{span: 12, offset: 0}} padding>
+      <ModelViewer/>
     </Column>
   </Row>
   </Grid>
